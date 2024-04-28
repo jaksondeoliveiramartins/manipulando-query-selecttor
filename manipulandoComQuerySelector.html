@@ -1,0 +1,142 @@
+<html>
+    <!--vamos manipular com document.querySelector-->
+    <head>
+        <body>
+            <style>
+                .conteudo h2  span {
+                    font-size: 13;
+                    cursor: pointer
+                }
+                .conteudo  ul  {
+                    overflow: hidden;
+                    height: 0;
+                    transition: 1s;
+
+                }
+                
+                
+
+                
+                
+                .visualizar {
+                    height: 500px !important;
+                    
+
+                }
+
+            </style>
+            
+            <!--Div1-->
+            
+            <div class="conteudo">
+                <h2>Lógica de programação <span>Visualizar</span>
+                </h2>
+                
+                        <ul>
+                        <li>Algoritimos</li>
+                        <li>Tipos de variaveis</li>
+                            <ol>
+                                <li>String(Texto)</li>
+                                <li>float(flutuante)</li>
+                                <li>Int(Inteiros)</li>
+                                <li>Boolean</li>
+                            </ol>
+                        <li>Tipos de operadores</li>
+                            <ol>
+                                <li>Aritimeticos</li>
+                                <li>Logicos</li>
+                                <li>precedência</li>
+                                <li>Relacionais</li>
+                            </ol>
+
+                        <li>Tipos de laços de Repeticão</li>
+                        <li>Tipos de condicional</li>
+                        <img src="img/card-ciclope.png" alt="vampira">
+                        </li>
+                        </ul>   
+
+            </div>
+
+        <!--Div2-->
+
+            <div class="conteudo">
+                <h2>Lógica de programação <span>Visualizar</span>
+                </h2>
+                <ul>
+                    <li>Algoritimos</li>
+                    <li>Tipos de variaveis</li>
+                        <ol>
+                            <li>String(Texto)</li>
+                            <li>float(flutuante)</li>
+                            <li>Int(Inteiros)</li>
+                            <li>Boolean</li>
+                        </ol>
+                    <li>Tipos de operadores</li>
+                        <ol>
+                            <li>Aritimeticos</li>
+                            <li>Logicos</li>
+                            <li>precedência</li>
+                            <li>Relacionais</li>
+
+
+                        </ol>
+
+                    <li>Tipos de laços de Repeticão</li>
+                    <li>Tipos de condicional</li>
+                    <img src="img/card-noturno.png" alt="vampira">
+                    </li>
+                </ul>   
+
+            </div> 
+
+            <script>
+        // manipulando com o document.query.Selector a class 'conteudo'.
+            /*
+            var span = document.querySelector('.conteudo  span');
+
+            span.addEventListener('click' ,function(){
+                var conteudo = document.querySelector('.conteudo ul  ');
+            
+                // nao visualizar.
+                if (conteudo.classList.contains('visualizar')) {
+                    span.innerHTML = 'visalizar!';
+                    conteudo.classList.remove('visualizar');
+                    } 
+
+                // Quero visualizar.
+                else {
+                        span.innerHtml = 'Ocultar';
+                        conteudo.classList.add('visualizar')
+                        
+                }
+            });  */ 
+                   
+                    
+        // manipulando com querySelectorAll todas class "conteudo"
+            
+            var spans = document.querySelectorAll('.conteudo span');
+            spans.forEach(function(span) {
+                span.addEventListener('click', function() {
+                    //var conteudo = document.querySelector('.conteudo ul')
+                    var conteudo = this.parentElement.nextElementSibling
+                    if (conteudo.classList.contains('visualizar')) {
+                        this.innerHTML = 'visalizar!';
+                        conteudo.classList.remove('visualizar');
+                    } 
+                    else {
+                        this.innerHTML = 'Ocultar';conteudo.classList.add('visualizar');
+                    }
+                });
+            }); 
+
+
+                
+                
+
+            </script>
+            
+
+            
+        </body>
+    </head>
+</html>
